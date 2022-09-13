@@ -10,7 +10,7 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import static org.springframework.web.reactive.function.server.RequestPredicates.accept;
 
 @Component
-public class ContentConfig {
+public class ContentConfigJava {
     @Bean
     public RouterFunction<ServerResponse> contentRouter(){
         return RouterFunctions.route()
