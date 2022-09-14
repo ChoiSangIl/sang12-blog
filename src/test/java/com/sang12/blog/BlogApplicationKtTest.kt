@@ -3,6 +3,7 @@ package com.sang12.blog
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.core.spec.style.ShouldSpec
 import io.kotest.core.spec.style.StringSpec
+import io.kotest.core.spec.style.WordSpec
 import io.kotest.matchers.shouldNotBe
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.context.ApplicationContext
@@ -38,6 +39,17 @@ class BlogApplicationKtBehaviorSpec(
             then("context 객체를 반환해야한다") {
                 context shouldNotBe null
             }
+        }
+    }
+})
+
+@SpringBootTest
+class BlogApplicationKtWordSpec(
+    private val context: ApplicationContext
+) : WordSpec({
+    "context 객체" should {
+        "return not null" {
+            context shouldNotBe null
         }
     }
 })
