@@ -5,6 +5,7 @@ import io.kotest.core.spec.style.ShouldSpec
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.core.spec.style.WordSpec
 import io.kotest.matchers.shouldNotBe
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.context.ApplicationContext
 
@@ -14,7 +15,7 @@ import org.springframework.context.ApplicationContext
  */
 @SpringBootTest
 class BlogApplicationKtTest(
-    private val context: ApplicationContext
+    @Autowired private val context: ApplicationContext
 ) : StringSpec({
     "Spring Boot 서비스가 실행 됐을경우, ApllicationContext 객체를 반환해야 한다" {
         context shouldNotBe null
@@ -23,7 +24,7 @@ class BlogApplicationKtTest(
 
 @SpringBootTest
 class BlogApplicationKtShouldSpec(
-    private val context: ApplicationContext
+    @Autowired private val context: ApplicationContext
 ) : ShouldSpec({
     should("Spring Boot 서비스가 실행 됐을경우, ApllicationContext 객체를 반환해야 한다"){
         context shouldNotBe null
@@ -32,7 +33,7 @@ class BlogApplicationKtShouldSpec(
 
 @SpringBootTest
 class BlogApplicationKtBehaviorSpec(
-    private val context: ApplicationContext
+    @Autowired private val context: ApplicationContext
 ) : BehaviorSpec({
     given("context 객체가 주어 졌을 때") {
         `when`("스프링부트 서비스가 올라갈 때") {
@@ -45,7 +46,7 @@ class BlogApplicationKtBehaviorSpec(
 
 @SpringBootTest
 class BlogApplicationKtWordSpec(
-    private val context: ApplicationContext
+    @Autowired private val context: ApplicationContext
 ) : WordSpec({
     "context 객체" should {
         "return not null" {
