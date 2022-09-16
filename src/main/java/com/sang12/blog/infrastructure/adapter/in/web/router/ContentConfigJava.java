@@ -1,9 +1,8 @@
-package com.sang12.blog.presantation.router;
+package com.sang12.blog.infrastructure.adapter.in.web.router;
 
-import com.sang12.blog.presantation.handler.ContentHandlerJava;
+import com.sang12.blog.infrastructure.adapter.in.web.handler.ContentHandlerJava;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
@@ -18,7 +17,6 @@ public class ContentConfigJava {
     public ContentConfigJava(@Autowired ContentHandlerJava contentHandlerJava){
         this.handler = contentHandlerJava;
     }
-
     @Bean
     public RouterFunction<ServerResponse> contentRouter(){
         return RouterFunctions.route()

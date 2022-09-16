@@ -1,4 +1,4 @@
-package com.sang12.blog.presantation.handler;
+package com.sang12.blog.infrastructure.adapter.in.web.handler;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
